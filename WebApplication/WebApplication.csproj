@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="boost" Version="1.76.0" />
+    <PackageReference Include="Font.Awesome" Version="5.15.3" />
+    <PackageReference Include="jQuery" Version="3.6.0" />
+    <PackageReference Include="MSTest.TestFramework" Version="2.2.4" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="TVGL" Version="1.0.19.213" />
+  </ItemGroup>
+
+</Project>
