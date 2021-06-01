@@ -10,7 +10,7 @@ namespace WebApplication.model
 
         log4net.ILog logger = log4net.LogManager.GetLogger("");
 
-        public Enum Color { Red,Black };
+        public enum Color { Red,Black };
 
         public class Node {
             public Node parent;
@@ -36,7 +36,7 @@ namespace WebApplication.model
         {
 
             Node y = z;
-            y_originalColor = y.color;
+            Color y_originalColor = y.color;
             Node x = null;
 
             if(z.left == RedBlackTree.nullnode)
@@ -98,8 +98,8 @@ namespace WebApplication.model
                         if(w.color == RedBlackTree.Color.Red)
 
                     {
-                        w.color = RedBlackThree.color.BLack;
-                        this.leftRotate(this, x, parent);
+                        w.color = RedBlackTree.Color.Black;
+                        this.leftRotate(this, x);
 
                     }
                 }
