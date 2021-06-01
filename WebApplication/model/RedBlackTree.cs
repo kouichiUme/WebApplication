@@ -8,6 +8,8 @@ namespace WebApplication.model
     public class RedBlackTree
     {
 
+        log4net.ILog logger = log4net.LogManager.GetLogger("");
+
         public Enum Color { Red,Black };
 
         public class Node {
