@@ -12,6 +12,9 @@ namespace WebApplication.model
 
         public enum Color { Red,Black };
 
+        
+
+
         public class Node {
             public Node parent;
             public Color color ;
@@ -27,9 +30,35 @@ namespace WebApplication.model
         }
 
 
+        private Node root = null;
+
+        public RedBlackTree()
+        {
+            root= new Node();
+        }
 
         // nullnode 
          static Object nullnode = null;
+
+
+        public Node getFirstNode()
+        {
+            return this.getMaxNode();
+        }
+
+
+        public Node getMaxNode()
+        {
+
+            Node target = null;
+            for (target = this.root; target.right != null; target = target.right) ;
+            {
+
+            }
+
+            return target;
+
+        }
 
 
         public void deleteNode(RedBlackTree tree, Node z)
@@ -60,18 +89,17 @@ namespace WebApplication.model
             if(u.parent == RedBlackTree.nullnode)
             {
                 // this comment line
-                         
 
            }
 
         }
 
 
-        public void deleteNode()//Dustin test comment
+        public void deleteNode(Node x )//Dustin test comment
         {
 
-            
 
+            this.fixDelete(this,x);
 
 
             return ;

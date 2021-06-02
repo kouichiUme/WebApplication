@@ -1,4 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using WebApplication.model;
+
 
 
 
@@ -9,6 +11,7 @@ namespace TestProject1
     {
 
 
+
         [TestMethod]
         public void TestMethod1()
         {
@@ -17,6 +20,21 @@ namespace TestProject1
 
             
 
+
+
+
+        }
+
+
+        [TestMethod]
+        public void TestRedBlackTree()
+        {
+
+            RedBlackTree rdTree = new RedBlackTree();
+
+            RedBlackTree.Node node = rdTree.getFirstNode();
+
+            rdTree.deleteNode(node);
 
 
 
