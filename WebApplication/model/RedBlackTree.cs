@@ -158,5 +158,23 @@ namespace WebApplication.model
 
 
         }
+
+
+        public void transplant(Node u ,Node v)
+        {
+            if(u.parent == RedBlackTree.nullnode)
+            {
+                this.root = v;
+
+            }else if(u == u.parent.left)
+            {
+                u.parent.left = v;
+            }else
+            {
+                u.parent.right = v;
+            }
+
+            v.parent = u.parent;
+        }
     }
 }
