@@ -9,9 +9,13 @@
     <PackageReference Include="Font.Awesome" Version="5.15.3" />
     <PackageReference Include="jQuery" Version="3.6.0" />
     <PackageReference Include="log4net" Version="2.0.12" />
-    <PackageReference Include="MSTest.TestFramework" Version="2.2.4" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="TVGL" Version="1.0.19.213" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1">
+      <TreatAsUsed>true</TreatAsUsed>
+    </PackageReference>
+    <PackageReference Include="StringTemplate4" Version="4.0.8" />
+    <PackageReference Include="TVGL" Version="1.0.19.213">
+      <TreatAsUsed>true</TreatAsUsed>
+    </PackageReference>
   </ItemGroup>
 
 </Project>

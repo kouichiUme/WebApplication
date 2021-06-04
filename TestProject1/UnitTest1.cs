@@ -3,7 +3,6 @@ using WebApplication.model;
 
 
 
-
 namespace TestProject1
 {
     [TestClass]
@@ -18,7 +17,7 @@ namespace TestProject1
             var f = new WebApplication.model.Finll();
 
 
-            
+            f.a();
 
 
 
