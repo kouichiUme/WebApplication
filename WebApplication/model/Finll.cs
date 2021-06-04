@@ -18,8 +18,17 @@ namespace WebApplication.model
         public void a()
         {
 
+
+
+            //  refrection で どこかから変数名をとってくる
+
             Template template = new Template("hogehoge <hoge>!");
             template.Add("hoge", "hogehoge");
+
+
+
+
+            template.Add("","");
 
 
 
