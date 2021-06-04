@@ -31,7 +31,7 @@ namespace TestProject1
         public void TestRedBlackTree()
         {
 
-            RedBlackTree<long,long> rdTree = new RedBlackTree<long,long)();
+            RedBlackTree<long,long> rdTree = new RedBlackTree<long,long>();
 
             RedBlackTree<long, long>.Node node = rdTree.getFirstNode();
 

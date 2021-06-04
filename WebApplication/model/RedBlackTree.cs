@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace WebApplication.model
 {
-    public class RedBlackTree<Value, Comparable>
+    public class RedBlackTree<Value, Comparable> where Comparable : System.IComparable<Comparable>
     {
 
         log4net.ILog logger = log4net.LogManager.GetLogger("");
@@ -28,8 +28,8 @@ namespace WebApplication.model
             public Color DeletedNodeColor = Color.Black;
 
 
-            protected Comparable key;
-            protected Value value;
+            public Comparable key;
+            public Value value;
 
 
         }
@@ -186,7 +186,7 @@ namespace WebApplication.model
             while (y.right == RedBlackTree<Value, Comparable>.nullnode)
             {
 
-                if (y.right.key.compare(x.key))
+                if (y.right.key.CompareTo(x.key) < 0)
                 {
                     {
 
@@ -196,12 +196,11 @@ namespace WebApplication.model
 
                 y.left = x;
 
-
-                this.fixInsert();
-
-
-                return this;
             }
+            this.fixInsert();
+
+
+            return this;
         }
 
 
@@ -262,13 +261,6 @@ namespace WebApplication.model
 
         }
 
-        public RedBlackTree<Value, Comparable>
-
-
-
-
-
-
-
     }
 }
+
