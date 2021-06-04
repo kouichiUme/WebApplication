@@ -1,6 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WebApplication.model;
-
+using System;
 
 
 namespace TestProject1
@@ -18,6 +18,8 @@ namespace TestProject1
 
 
             f.a();
+
+            Console.WriteLine("hoge");
 
 
 

@@ -17,11 +17,13 @@ namespace WebApplication.model
         
         public void a()
         {
-            Antlr4.StringTemplate.Template template = new Antlr4.StringTemplate.Template("hogehoge");
+
+            Template template = new Template("hogehoge <hoge>!");
             template.Add("hoge", "hogehoge");
 
 
-            Console.WriteLine(template);
+
+            Console.WriteLine(template.Render());
             return;
         }
         

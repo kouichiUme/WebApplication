@@ -51,7 +51,7 @@ namespace WebApplication.model
         {
 
             Node target = null;
-            for (target = this.root; target.right != null; target = target.right) ;
+            for (target = this.root; target.right != null; target = target.right) 
             {
 
             }
