@@ -31,11 +31,13 @@ namespace TestProject1
         public void TestRedBlackTree()
         {
 
-            RedBlackTree rdTree = new RedBlackTree();
+            RedBlackTree<long,long> rdTree = new RedBlackTree<long,long)();
 
-            RedBlackTree.Node node = rdTree.getFirstNode();
+            RedBlackTree<long, long>.Node node = rdTree.getFirstNode();
 
-            rdTree.deleteNode(node);
+            rdTree.leftRotate(node).rightRotate(node);
+            
+            rdTree.deleteNode(node).rightRotate(node);
 
 
 

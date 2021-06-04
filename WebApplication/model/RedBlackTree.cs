@@ -5,28 +5,33 @@ using System.Threading.Tasks;
 
 namespace WebApplication.model
 {
-    public class RedBlackTree
+    public class RedBlackTree<Value, Comparable>
     {
 
         log4net.ILog logger = log4net.LogManager.GetLogger("");
 
-        public enum Color { Red,Black };
-
-        
+        public enum Color { Red, Black };
 
 
-        public class Node {
+
+
+        public class Node
+        {
             public Node parent;
-            public Color color ;
+            public Color color;
             public Node left;
             public Node right;
 
             //Examples using enum:
-            
-            public Color RootNodeColor = Color.Red ;
-            public Color DeletedNodeColor = Color.Black ;
-           
-                
+
+            public Color RootNodeColor = Color.Red;
+            public Color DeletedNodeColor = Color.Black;
+
+
+            protected Comparable key;
+            protected Value value;
+
+
         }
 
 
@@ -34,11 +39,11 @@ namespace WebApplication.model
 
         public RedBlackTree()
         {
-            root= new Node();
+            root = new Node();
         }
 
         // nullnode 
-         static Object nullnode = null;
+        static Object nullnode = null;
 
 
         public Node getFirstNode()
@@ -51,7 +56,7 @@ namespace WebApplication.model
         {
 
             Node target = null;
-            for (target = this.root; target.right != null; target = target.right) 
+            for (target = this.root; target.right != null; target = target.right)
             {
 
             }
@@ -61,49 +66,40 @@ namespace WebApplication.model
         }
 
 
-        public void deleteNode(RedBlackTree tree, Node z)
+
+        public void transPlant(Node u, Node v)
+        {
+
+
+            if (u.parent == RedBlackTree<Value, Comparable>.nullnode)
+            {
+                // this comment line
+
+            }
+
+        }
+
+
+        public RedBlackTree<Value, Comparable> deleteNode(Node z)
         {
 
             Node y = z;
             Color y_originalColor = y.color;
             Node x = null;
 
-            if(z.left == RedBlackTree.nullnode)
+            if (z.left == RedBlackTree<Value, Comparable>.nullnode)
             {
 
                 x = z.right;
-               transPlant(this, z, z.right);
+                this.transPlant(z, z.right);
 
             }
-            fixDelete(this, x);
+            this.fixDelete(x);
 
 
-            return;
+            return this;
         }
 
-
-        public void transPlant(RedBlackTree tree,Node u,Node v)
-        {
-
-
-            if(u.parent == RedBlackTree.nullnode)
-            {
-                // this comment line
-
-           }
-
-        }
-
-
-        public void deleteNode(Node x )//Dustin test comment
-        {
-
-
-            this.fixDelete(this,x);
-
-
-            return ;
-        }
 
         /// <summary>
         ///  ノードを削除したあとに　赤赤になっていたら直すもの
@@ -114,20 +110,20 @@ namespace WebApplication.model
         /// 
         ///  if
         /// 
-        public void fixDelete(RedBlackTree rbTree , Node x)
+        public RedBlackTree<Value, Comparable> fixDelete(Node x)
         {
             /// 
-            if (x ==RedBlackTree.nullnode && x.color == RedBlackTree.Color.Black)
+            if (x == RedBlackTree<Value, Comparable>.nullnode && x.color == RedBlackTree<Value, Comparable>.Color.Black)
             {
-                if(x == x.parent.left)
+                if (x == x.parent.left)
                 {
                     Node w = x.parent.right;
 
-                        if(w.color == RedBlackTree.Color.Red)
+                    if (w.color == RedBlackTree<Value, Comparable>.Color.Red)
 
                     {
-                        w.color = RedBlackTree.Color.Black;
-                        this.leftRotate(this, x);
+                        w.color = RedBlackTree<Value, Comparable>.Color.Black;
+                        this.leftRotate(x);
 
                     }
                 }
@@ -137,7 +133,7 @@ namespace WebApplication.model
 
 
 
-            return;
+            return this;
         }
 
         /// <summary>
@@ -145,31 +141,35 @@ namespace WebApplication.model
         /// </summary>
         /// <param name="t"></param>
         /// <param name="x"></param>
-        public void leftRotate(RedBlackTree t,Node x)
+/*        public RedBlackTree<Value,Comparable> leftRotate( Node x)
         {
 
             Node y = x.right;
             x.right = y.left;
 
-            if(y.left != RedBlackTree.nullnode)
+            if (y.left != RedBlackTree<Value,Comparable>.nullnode)
             {
                 y.left.parent = x;
             }
 
 
+            return this;
+
         }
+*/
 
-
-        public void transplant(Node u ,Node v)
+        public void transplant(Node u, Node v)
         {
-            if(u.parent == RedBlackTree.nullnode)
+            if (u.parent == RedBlackTree<Value, Comparable>.nullnode)
             {
                 this.root = v;
 
-            }else if(u == u.parent.left)
+            }
+            else if (u == u.parent.left)
             {
                 u.parent.left = v;
-            }else
+            }
+            else
             {
                 u.parent.right = v;
             }
@@ -177,36 +177,72 @@ namespace WebApplication.model
             v.parent = u.parent;
         }
 
-        public void insert(Node x)
+        public RedBlackTree<Value, Comparable> insert(Node x)
         {
 
-            
+            Node y = this.root;
 
-            return;
+
+            while (y.right == RedBlackTree<Value, Comparable>.nullnode)
+            {
+
+                if (y.right.key.compare(x.key))
+                {
+                    {
+
+                    }
+
+                }
+
+                y.left = x;
+
+
+                this.fixInsert();
+
+
+                return this;
+            }
         }
 
 
-        private void leftRotate(Node x)
+        public RedBlackTree<Value, Comparable> fixInsert()
+        {
+
+
+
+
+
+            return this;
+        }
+
+
+
+
+
+        public RedBlackTree<Value, Comparable> leftRotate(Node x)
         {
 
             Node y = x.right;
             x.right = y.left;
 
-            if(y.left == RedBlackTree.nullnode)
+            if (y.left == RedBlackTree<Value, Comparable>.nullnode)
             {
                 y.left.parent = x;
             }
 
             y.parent = x.parent;
 
-            if(x.parent == RedBlackTree.nullnode)
+            if (x.parent == RedBlackTree<Value, Comparable>.nullnode)
             {
                 this.root = y;
 
-            }else if(x == x.parent.left){
+            }
+            else if (x == x.parent.left)
+            {
 
                 x.parent.left = y;
-            }else
+            }
+            else
             {
                 x.parent.right = y;
             }
@@ -214,10 +250,24 @@ namespace WebApplication.model
             x.parent = y;
 
 
-
-
-            return;
+            return this;
         }
+
+
+        public RedBlackTree<Value, Comparable> rightRotate(Node x)
+        {
+
+
+            return this;
+
+        }
+
+        public RedBlackTree<Value, Comparable>
+
+
+
+
+
 
 
     }
