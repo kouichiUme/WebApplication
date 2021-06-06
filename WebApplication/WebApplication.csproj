@@ -12,6 +12,8 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1">
       <TreatAsUsed>true</TreatAsUsed>
     </PackageReference>
+    <PackageReference Include="NumSharp" Version="0.30.0" />
+    <PackageReference Include="Pandas.NET" Version="0.1.0" />
     <PackageReference Include="StringTemplate4" Version="4.0.8" />
     <PackageReference Include="TVGL" Version="1.0.19.213">
       <TreatAsUsed>true</TreatAsUsed>
