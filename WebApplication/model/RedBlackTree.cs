@@ -35,15 +35,17 @@ namespace WebApplication.model
         }
 
 
-        private Node root = null;
+        public  Node root = null;
 
         public RedBlackTree()
         {
-            root = new Node();
+            root = new RedBlackTree<Value, Comparable>.Node();
+           
+                    
         }
 
         // nullnode 
-        static Object nullnode = null;
+        public static Node nullnode = null;
 
 
         public Node getFirstNode()
@@ -210,6 +212,8 @@ namespace WebApplication.model
 
 
 
+            
+
 
             return this;
         }
@@ -224,7 +228,7 @@ namespace WebApplication.model
             Node y = x.right;
             x.right = y.left;
 
-            if (y.left == RedBlackTree<Value, Comparable>.nullnode)
+            if (y.left != RedBlackTree<Value, Comparable>.nullnode)
             {
                 y.left.parent = x;
             }
@@ -253,13 +257,52 @@ namespace WebApplication.model
         }
 
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="x"></param>
+        /// <returns></returns>
+
         public RedBlackTree<Value, Comparable> rightRotate(Node x)
         {
+
+            /// 今日ここやる 6/6(日）    
+            Node y = x.left;
+            x.left = y.right;
+
+ 
+           if (y.right != RedBlackTree<Value, Comparable>.nullnode)
+            {
+                y.right.parent = x;
+            }
+
+            y.parent = x.parent;
+
+            if (x.parent == RedBlackTree<Value, Comparable>.nullnode)
+            {
+                this.root = y;
+
+            }
+            else if (x == x.parent.right)
+            {
+
+                x.parent.right = y;
+            }
+            else
+            {
+                x.parent.left = y;
+            }
+            y.right = x;
+            x.parent = y;
+
 
 
             return this;
 
         }
+
+
+        
 
     }
 }
