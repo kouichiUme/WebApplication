@@ -179,36 +179,59 @@ namespace WebApplication.model
             v.parent = u.parent;
         }
 
-        public RedBlackTree<Value, Comparable> insert(Node x)
+        public RedBlackTree<Value, Comparable> insert(Node z)
+
         {
 
-            Node y = this.root;
+            Node y = RedBlackTree<Value,Comparable>.nullnode;
+            Node x = this.root;
 
-
-            while (y.right == RedBlackTree<Value, Comparable>.nullnode)
+            while (x.right == RedBlackTree<Value, Comparable>.nullnode)
             {
+                y = x;
 
-                if (y.right.key.CompareTo(x.key) < 0)
+                if (x.key.CompareTo(z.key) < 0)
                 {
-                    {
-
-                    }
+                    x = x.right;
 
                 }
+                else
+                {
+                    x = x.left ;
 
-                y.left = x;
-
+                }
             }
-            this.fixInsert();
+
+            z.parent = y;
+
+
+            if(y == nullnode)
+            {
+                this.root = z;
+            }
+            else if(y.key.CompareTo(z.key) >0)
+            {
+                y.left = z;
+            }
+            else
+            {
+                y.right = z;
+            }
+
+
+            z.left = nullnode;
+            z.right = nullnode;
+            z.color = Color.Red;
+
+            this.fixInsert(z);
 
 
             return this;
         }
 
 
-        public RedBlackTree<Value, Comparable> fixInsert()
+        public RedBlackTree<Value, Comparable> fixInsert(Node z)
         {
-
 
 
 
