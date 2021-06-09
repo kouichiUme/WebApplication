@@ -233,8 +233,49 @@ namespace WebApplication.model
         public RedBlackTree<Value, Comparable> fixInsert(Node z)
         {
 
+            // fixinsert right 
+
+            while(z.parent.color == Color.Red)
+            {
+
+                if(z.parent == z.parent.parent.left)
+                {
+                    Node y = z.parent.parent.right;
+
+                    if (y.color == Color.Red)
+                    {
 
 
+                        z.parent.color = Color.Black;
+                        y.color = Color.Black;
+
+                        z.parent.parent.color = Color.Red;
+
+                        z = z.parent.parent;
+
+
+                    } else
+                    {
+                        if (z == z.parent.right)
+                        {
+                            z = z.parent;
+                            leftRotate(z);
+
+                        }
+                        z.parent.color = Color.Black;
+
+                        z.parent.parent.color = Color.Red;
+
+                        rightRotate(z.parent.parent);
+                    }
+
+                }
+                else
+                {
+
+
+                    // 日曜日にやる
+                }
             
 
 
