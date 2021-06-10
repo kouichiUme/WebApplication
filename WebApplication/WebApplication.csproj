@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="boost" Version="1.76.0" />
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
     <PackageReference Include="Font.Awesome" Version="5.15.3" />
     <PackageReference Include="jQuery" Version="3.6.0" />
     <PackageReference Include="log4net" Version="2.0.12" />
