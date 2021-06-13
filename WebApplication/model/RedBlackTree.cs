@@ -235,10 +235,10 @@ namespace WebApplication.model
 
             // fixinsert right 
 
-            while(z.parent.color == Color.Red)
+            while (z.parent.color == Color.Red)
             {
 
-                if(z.parent == z.parent.parent.left)
+                if (z.parent == z.parent.parent.left)
                 {
                     Node y = z.parent.parent.right;
 
@@ -254,7 +254,8 @@ namespace WebApplication.model
                         z = z.parent.parent;
 
 
-                    } else
+                    }
+                    else
                     {
                         if (z == z.parent.right)
                         {
@@ -275,11 +276,46 @@ namespace WebApplication.model
 
 
                     // 日曜日にやる
+
+
+                    Node y = z.parent.parent.left;
+
+                    if (y.color == Color.Red)
+                    {
+
+
+                        z.parent.color = Color.Black;
+                        y.color = Color.Black;
+
+                        z.parent.parent.color = Color.Red;
+
+                        z = z.parent.parent;
+
+
+                    }
+                    else
+                    {
+                        if (z == z.parent.left)
+                        {
+                            z = z.parent;
+                            rightRotate(z);
+
+                        }
+                        z.parent.color = Color.Black;
+
+                        z.parent.parent.color = Color.Red;
+
+                        leftRotate(z.parent.parent);
+                    }
+
+
+
                 }
-            
 
 
-            return this;
+
+                return this;
+            }
         }
 
 
