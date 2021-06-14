@@ -313,9 +313,9 @@ namespace WebApplication.model
                 }
 
 
-
-                return this;
             }
+
+            return this;
         }
 
 
