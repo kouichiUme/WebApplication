@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Text;
 
 namespace WebApplication.model
 {
@@ -55,5 +56,33 @@ namespace WebApplication.model
             a[1] = s;
             return a;
         }
+
+
+        public String printOptionalParens(int[][] s, int i,int j)
+        {
+            StringBuilder  sb = new StringBuilder();
+
+            if (i ==j)
+            {
+                 sb.Append("A" + i);
+
+            }
+            else
+            {
+                sb.Append("(");
+
+                sb.Append(printOptionalParens(s, i, s[i][j]));
+                sb.Append(printOptionalParens(s, s[i][j]+1, j));
+
+                sb.Append(")");
+
+            }
+
+
+            return sb.ToString();
+
+        }
+
+
     }
 }
