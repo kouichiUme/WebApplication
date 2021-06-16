@@ -118,7 +118,7 @@ namespace WebApplication.model
             {
                 for (int k = i; k < j; k++)
                 {
-                    int q = lookupChain(m, p, i, k) + lookupChain(m, p, k+2, j) + p[i-1]*p[k]*p[j];
+                    int q = lookupChain(m, p, i, k) + lookupChain(m, p, k+1, j) + p[i-1]*p[k]*p[j];
 
                     if (q < m[i][j])
                     {
