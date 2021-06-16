@@ -83,6 +83,55 @@ namespace WebApplication.model
 
         }
 
+        public int memorizedMatrixChgain(int[] p)
+        {
+
+            int n = p.Length - 1;
+
+
+            int[][] m = new int[10][];
+
+            for(int i = 0; i <= n; i++)
+            {
+                for(int j = 0; j <= n; j++)
+                {
+                    m[i][j] = int.MaxValue;
+                }
+            }
+
+
+            return lookupChain(m, p, 1, n);
+
+        }
+
+        public int lookupChain(int[][] m ,int[] p,int i , int j)
+        {
+            if(m[i][j] < int.MaxValue)
+            {
+                return m[i][j];
+            }
+            if(i == j)
+            {
+                m[i][j]=0;
+            }
+            else
+            {
+                for (int k = i; k < j; k++)
+                {
+                    int q = lookupChain(m, p, i, k) + lookupChain(m, p, k+2, j) + p[i-1]*p[k]*p[j];
+
+                    if (q < m[i][j])
+                    {
+                        m[i][j]=q;
+                    }
+                }
+
+            }
+
+
+            return m[i][j];
+        }
+
 
     }
 }
