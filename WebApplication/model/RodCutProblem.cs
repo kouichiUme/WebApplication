@@ -18,7 +18,16 @@ namespace WebApplication.model
 
 
 
+            openWith.Add("1","2");
+
+
+
+
+
         }
+
+
+
 
 
     }
