@@ -153,6 +153,19 @@ namespace TestProject1
 
             rdTree.rightRotate(no5);
         }
+
+
+        [TestMethod]
+        public void TestDictionary()
+        {
+
+            WebApplication.model.RodCutProblem rd = new WebApplication.model.RodCutProblem();
+
+
+            rd.
+
+
+        }
         
     }
 }
