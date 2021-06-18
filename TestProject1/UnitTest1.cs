@@ -162,7 +162,6 @@ namespace TestProject1
             WebApplication.model.RodCutProblem rd = new WebApplication.model.RodCutProblem();
 
 
-            rd.
 
 
         }
