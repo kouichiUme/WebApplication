@@ -216,6 +216,27 @@ namespace WebApplication.model
 
             }
         }
+
+
+        public int[] greed(int[] M , int[] w)
+        {
+
+            int[] g = null;
+
+
+            for (int i = 0; i< w.Length; i++){
+
+                // m.
+                // if (M.T.contains(g, w[i]){
+                    // g.append(w[i])
+                       ;
+               // }
+            }
+            
+
+
+            return g;
+        }
     }
 
 
