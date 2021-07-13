@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace WebApplication.model
 {
-    public class GraphTheory<T> where T : new()
+    public class GraphTheory<T> where T : class
 
     {
 
@@ -20,9 +20,40 @@ namespace WebApplication.model
 
         }
 
+        /// <summary>
+        /// 最小全域木
+        /// </summary>
+        public void genericMinimumSpanningTree()
+        {
 
 
-        
+
+        }
+
+        public void primMinimumSpanningTree()
+        {
+            Queue<T> q = new Queue<T>();
+
+            
+            while (q.Count!=0)
+            {
+                T t = q.Min();
+                T b = null;
+                while((b = this.adj(t)) != null)
+                {
+
+                }
+            }
+
+
+        }
+
+
+        public T adj(T q)
+        {
+            LinkedListNode<T> t = this.list.Find(q);
+            return t.Value;
+        }
 
     }
 }
