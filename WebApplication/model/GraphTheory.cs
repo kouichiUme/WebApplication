@@ -55,5 +55,18 @@ namespace WebApplication.model
             return t.Value;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public void singleSourceShortestPathProblem()
+        {
+
+
+        }
+
+        public void dijkstra()
+        {
+
+        }
     }
 }
