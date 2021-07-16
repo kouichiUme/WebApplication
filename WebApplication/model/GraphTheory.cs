@@ -64,9 +64,32 @@ namespace WebApplication.model
 
         }
 
+        public void initalizeSingleSource()
+        {
+
+
+        }
+
+        public void relax() { }
+
+
+
+        public void digShortestPath()
+        {
+
+        }
+
+        public void bellmanFord()
+        {
+
+        }
+
         public void dijkstra()
         {
 
         }
+
+
+
     }
 }
