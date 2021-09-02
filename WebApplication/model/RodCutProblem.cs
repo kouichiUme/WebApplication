@@ -24,8 +24,7 @@ namespace WebApplication.model
 
         }
 
-
-        public String[] getOptions()
+           public String[] getOptions()
         {
 
             String[] values = new string[10];
