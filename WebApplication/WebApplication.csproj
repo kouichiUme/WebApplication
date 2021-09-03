@@ -7,6 +7,10 @@
   <ItemGroup>
     <PackageReference Include="boost" Version="1.76.0" />
     <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="Fody" Version="6.5.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Font.Awesome" Version="5.15.3" />
     <PackageReference Include="jQuery" Version="3.6.0" />
     <PackageReference Include="log4net" Version="2.0.12" />
@@ -15,6 +19,7 @@
     </PackageReference>
     <PackageReference Include="NumSharp" Version="0.30.0" />
     <PackageReference Include="Pandas.NET" Version="0.1.0" />
+    <PackageReference Include="Spring.Aop" Version="3.0.0" />
     <PackageReference Include="StringTemplate4" Version="4.0.8" />
     <PackageReference Include="TVGL" Version="1.0.19.213">
       <TreatAsUsed>true</TreatAsUsed>
