@@ -7,10 +7,6 @@
   <ItemGroup>
     <PackageReference Include="boost" Version="1.76.0" />
     <PackageReference Include="EntityFramework" Version="6.4.4" />
-    <PackageReference Include="Fody" Version="6.5.2">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
     <PackageReference Include="Font.Awesome" Version="5.15.3" />
     <PackageReference Include="jQuery" Version="3.6.0" />
     <PackageReference Include="log4net" Version="2.0.12" />
@@ -24,6 +20,10 @@
     <PackageReference Include="TVGL" Version="1.0.19.213">
       <TreatAsUsed>true</TreatAsUsed>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Service\AI\" />
   </ItemGroup>
 
 </Project>

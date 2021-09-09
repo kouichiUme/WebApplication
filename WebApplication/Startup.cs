@@ -47,6 +47,9 @@ namespace WebApplication
 
             app.UseAuthorization();
 
+
+
+            // url’Ç‰Á‚·‚é‚È‚ç‚±‚±
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();

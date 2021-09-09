@@ -3,14 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebApplication.model
+namespace WebApplication.Service.Kinetics
 {
-    public class Accounting
+    public class Rotator
     {
-
-    
-        
-
-
     }
-}   
+}
