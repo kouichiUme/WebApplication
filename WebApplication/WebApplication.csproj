@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <Folder Include="Service\AI\" />
+    <Folder Include="Utilities\Cli\" />
   </ItemGroup>
 
 </Project>
