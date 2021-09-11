@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <Nullable>annotations</Nullable>
+    <UserSecretsId>c8bd6364-af50-4eed-b1a7-0e0365985437</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,6 +12,11 @@
     <PackageReference Include="Font.Awesome" Version="5.15.3" />
     <PackageReference Include="jQuery" Version="3.6.0" />
     <PackageReference Include="log4net" Version="2.0.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1">
       <TreatAsUsed>true</TreatAsUsed>
     </PackageReference>
@@ -26,6 +32,7 @@
   <ItemGroup>
     <Folder Include="Service\AI\" />
     <Folder Include="Utilities\Cli\" />
+    <Folder Include="App_Data\" />
   </ItemGroup>
 
 </Project>
