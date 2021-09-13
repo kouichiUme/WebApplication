@@ -30,7 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Service\AI\" />
+    <Folder Include="Pages\新しいフォルダー\" />
     <Folder Include="Utilities\Cli\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
